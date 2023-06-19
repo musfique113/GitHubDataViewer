@@ -1,23 +1,52 @@
 import 'package:flutter/material.dart';
-import 'package:githubdataviewer/home_page.dart';
+
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _MyAppState();
+  }
+}
 
-  // This widget is the root of your application.
+class _MyAppState extends State<MyApp> {
+  bool _isDarkMode = false;
+
+  void _toggleTheme() {
+    setState(() {
+      _isDarkMode = !_isDarkMode;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      title: 'Theme Toggle',
+      debugShowCheckedModeBanner: false,
+      theme: _isDarkMode ? ThemeData.dark() : ThemeData.light(),
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Switch theme:',
+                style: TextStyle(fontSize: 18),
+              ),
+              SizedBox(height: 10),
+              Switch(
+                value: _isDarkMode,
+                onChanged: (value) {
+                  _toggleTheme();
+                },
+              ),
+            ],
+          ),
+        ),
       ),
-      home: HomePage(),
     );
   }
 }
