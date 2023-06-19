@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'main_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,25 +28,9 @@ class _MyAppState extends State<MyApp> {
       title: 'Theme Toggle',
       debugShowCheckedModeBanner: false,
       theme: _isDarkMode ? ThemeData.dark() : ThemeData.light(),
-      home: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Switch theme:',
-                style: TextStyle(fontSize: 18),
-              ),
-              SizedBox(height: 10),
-              Switch(
-                value: _isDarkMode,
-                onChanged: (value) {
-                  _toggleTheme();
-                },
-              ),
-            ],
-          ),
-        ),
+      home: MainScreen(
+        toggleTheme: _toggleTheme,
+        isDarkMode: _isDarkMode,
       ),
     );
   }
