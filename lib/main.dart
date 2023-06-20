@@ -25,7 +25,6 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Theme Toggle',
       debugShowCheckedModeBanner: false,
       theme: _isDarkMode ? ThemeData.dark() : ThemeData.light(),
       home: MainScreen(
