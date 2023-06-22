@@ -2,15 +2,12 @@
 
 Flutter application that utilizes the GitHub API to retrieve and display information about GitHub repositories.
 
-## Getting Started
+# **ScreenShots**
 
-This project is a starting point for a Flutter application.
+<img src="https://github.com/musfique113/GitHubDataViewer/assets/53111065/15e7f50f-d25d-4463-b610-d60d43ed40d8" alt="Screenshot 2" width="200" height="400">
+<img src="https://github.com/musfique113/GitHubDataViewer/assets/53111065/b5041fae-7048-48b2-a7ab-8fb24e948a9f" alt="Screenshot 21" width="200" height="400">
+<img src="https://github.com/musfique113/GitHubDataViewer/assets/53111065/0a45d759-c4f1-4680-a318-ca635e8d9827" alt="Screenshot 16" width="200" height="400">
+<img src="https://github.com/musfique113/GitHubDataViewer/assets/53111065/ebe3a4ee-cde8-44be-8719-c27cbf639e60" alt="Screenshot 12" width="200" height="400">
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# **Demo**
+<img src="https://github.com/musfique113/GitHubDataViewer/assets/53111065/753dfc8f-4854-4e8c-bdf6-4df974b1a85d" alt="GIF" width="200" height="400">
