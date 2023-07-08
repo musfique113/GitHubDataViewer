@@ -45,11 +45,18 @@ class _HomePageState extends State<HomePage> {
           Padding(
             padding: EdgeInsets.all(16.0),
             child: Row(
-              children: [
-                Text('Filter by:'),
-                SizedBox(width: 16.0),
-                _buildFilterOption(),
-              ],
+                children: [
+                  Text(
+                    'Filter by:',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                  SizedBox(width: 16.0),
+                  _buildFilterOption(),
+                ],
             ),
           ),
           Expanded(
