@@ -23,6 +23,43 @@ class _HomePageState extends State<HomePage> {
     _fetchRepositories();
   }
 
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Home'),
+        actions: [
+          IconButton(
+            icon: Icon(_isGridView ? Icons.view_list : Icons.view_module),
+            onPressed: () {
+              setState(() {
+                _isGridView = !_isGridView;
+              });
+            },
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Row(
+              children: [
+                Text('Filter by:'),
+                SizedBox(width: 16.0),
+                _buildFilterOption(),
+              ],
+            ),
+          ),
+          Expanded(
+            child: _isGridView ? _buildGridView() : _buildListView(),
+          ),
+        ],
+      ),
+    );
+  }
+
   Future<void> _fetchRepositories() async {
     final response = await http.get(
       Uri.parse('https://api.github.com/users/${widget.username}/repos'),
@@ -104,39 +141,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-        actions: [
-          IconButton(
-            icon: Icon(_isGridView ? Icons.view_list : Icons.view_module),
-            onPressed: () {
-              setState(() {
-                _isGridView = !_isGridView;
-              });
-            },
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Row(
-              children: [
-                Text('Filter by:'),
-                SizedBox(width: 16.0),
-                _buildFilterOption(),
-              ],
-            ),
-          ),
-          Expanded(
-            child: _isGridView ? _buildGridView() : _buildListView(),
-          ),
-        ],
-      ),
-    );
-  }
 }
